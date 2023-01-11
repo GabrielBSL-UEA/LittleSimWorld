@@ -42,10 +42,12 @@ namespace Main
         {
             if (value)
             {
+                _uIManager.DeactivateInputs();
                 _player.ActivateInputs();
                 return;
             }
 
+            _uIManager.ActivateInputs();
             _player.DeactivateInputs();
         }
 

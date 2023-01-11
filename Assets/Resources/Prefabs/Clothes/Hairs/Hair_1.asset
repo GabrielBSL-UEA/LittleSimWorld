@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cc0bc65df0b3664492f940aafc28233, type: 3}
+  m_Name: Hair_1
+  m_EditorClassIdentifier: 
+  itemSprite: {fileID: 252395467, guid: d39bfcfe6e73e6148944ef6d900649f8, type: 3}
+  clothingAnimatorController: {fileID: 9100000, guid: f07d653e2e0a54b4b86d1e391a40b837, type: 2}

@@ -1,4 +1,5 @@
 using Enums;
+using Custom;
 
 namespace Scenario
 {
@@ -9,5 +10,6 @@ namespace Scenario
         public Characters character;
         public Mood mood;
         public string messageText;
+        public CustomEvent eventToTrigger;
     }
 }

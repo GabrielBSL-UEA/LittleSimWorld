@@ -1,3 +1,4 @@
+using Custom;
 using System;
 using UnityEngine;
 
@@ -32,7 +33,7 @@ namespace Main.UI
         }
 
         //Deactivate the panel and sends a callback
-        public void Deactivate(Action callback)
+        public void Deactivate(CustomEvent callback = null)
         {
             if (_deactivating)
             {
@@ -44,7 +45,7 @@ namespace Main.UI
                 setEase(deactivationEase)
                 .setOnComplete(() =>
                 {
-                    callback.Invoke();
+                    callback?.TriggerEvent();
                     gameObject.SetActive(false);
                 });
         }

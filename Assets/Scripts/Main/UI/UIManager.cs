@@ -21,7 +21,6 @@ namespace Main.UI
         private int _conversationIndex;
         private bool _inConversation;
         private MessageSegment _currentMessageSegment;
-        private Action onConversationEnd;
 
         //Set the input callbacks
         private void Awake()
@@ -38,14 +37,12 @@ namespace Main.UI
         public void ActivateInputs()
         {
             _inputActions.Enable();
-            onConversationEnd += ReturnControlToPlayer;
         }
 
         //Deactivate the interface inputs and the conversation end callback
         public void DeactivateInputs()
         {
             _inputActions.Disable();
-            onConversationEnd -= ReturnControlToPlayer;
         }
 
         private void ReceiveNavigationInput(Vector2 direction)
@@ -70,7 +67,7 @@ namespace Main.UI
                 if (_conversationIndex >= _currentMessageSegment.Messages().Length)
                 {
                     _inConversation = false;
-                    _gameInterface.CloseConversation(onConversationEnd);
+                    _gameInterface.CloseConversation();
                     return;
                 }
 
@@ -97,15 +94,9 @@ namespace Main.UI
             var message = newMessage.messageText;
             var character = newMessage.character;
             var mood = newMessage.mood;
+            var newEvent = newMessage.eventToTrigger;
 
-            return _gameInterface.ShowMessageOnScreen(message, character, mood);
-        }
-
-        //Disable interface input and reactivate the player inputs
-        private void ReturnControlToPlayer()
-        {
-            _inputActions.Disable();
-            GameManager.Instance.SetPlayerControl(true);
+            return _gameInterface.ShowMessageOnScreen(message, character, mood, newEvent);
         }
 
         //Function called in the scene beginning

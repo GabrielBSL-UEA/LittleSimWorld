@@ -7,7 +7,7 @@ namespace Scenario
      *  Scriptable object class that saves a message sequence, avoiding having to manually add texts to the interactable object
      *
      */
-    [CreateAssetMenu(fileName = "MessageSegment", menuName = "Custom/MessageSegment")]
+    [CreateAssetMenu(fileName = "MessageSegment", menuName = "Event/MessageSegment")]
     public class MessageSegment : ScriptableObject
     {
         [SerializeField] private Message[] _messageSequence;
