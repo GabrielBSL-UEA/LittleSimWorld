@@ -12,9 +12,10 @@ namespace Scenario
         //Item to hold
         [SerializeField] private Item itemToCollect;
 
-        [Header("Light")]
+        [Header("Effects")]
         [SerializeField] private Transform lightTransform;
         [SerializeField] private float fullRotationTime;
+        [SerializeField] private GameObject particleOnCollect;
 
         //To avoid double interaction
         private bool _collected;
@@ -66,6 +67,8 @@ namespace Scenario
             GameManager.Instance.RegisterNewItemToPlayerInventory(itemToCollect);
             AudioManager.Instance.PlaySFX("s_GetItem");
             StopAllCoroutines();
+
+            Instantiate(particleOnCollect, transform.position, Quaternion.identity);
 
             if (destroyAfter)
             {
