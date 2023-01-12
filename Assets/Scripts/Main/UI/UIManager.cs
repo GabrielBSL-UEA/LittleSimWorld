@@ -105,6 +105,11 @@ namespace Main.UI
             _gameInterface.OpenSpecialPanel();
         }
 
+        public void PlaySceneTransitionAnimation(Action callback)
+        {
+            _gameInterface.SceneTransitionAnimation(callback);
+        }
+
         //Function called in the scene beginning
         public void SetUp()
         {

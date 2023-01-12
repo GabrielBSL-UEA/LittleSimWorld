@@ -23,8 +23,6 @@ namespace Scenario
         //Update the object sprite and the outline object with the holded item
         private void UpdateCollectableSprite()
         {
-            TryGetComponent(out SpriteRenderer mainRenderer);
-
             mainRenderer.sprite = itemToCollect.Icon();
 
             for (int i = 0; i < 4; i++)
