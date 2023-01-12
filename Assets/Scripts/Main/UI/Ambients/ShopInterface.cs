@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine.UI;
 using Main.Inventory;
 using System;
+using Audio;
 
 namespace Main.UI
 {
@@ -99,6 +100,7 @@ namespace Main.UI
             {
                 _currentButton = newButtonObject;
                 _clothingToBuy = clothing;
+                PlayUIClick();
 
                 UpdateConfirmationPanel(clothing, ConfirmPurchase, false);
                 confirmationPanel.gameObject.SetActive(true);
@@ -139,9 +141,11 @@ namespace Main.UI
         {
             if (!GameManager.Instance.RemoveMoney(_clothingToBuy.PurchasePrice()))
             {
+                AudioManager.Instance.PlaySFX("s_OperationFailed");
                 return;
             }
 
+            AudioManager.Instance.PlaySFX("s_OperationSuccessful");
             CloseConfirmationPanel();
             Destroy(_currentButton);
 
@@ -217,6 +221,7 @@ namespace Main.UI
         {
             CloseConfirmationPanel();
             Destroy(_currentButton);
+            AudioManager.Instance.PlaySFX("s_OperationSuccessful");
 
             GameManager.Instance.RemoveItemFromPlayerInventory(_itemToSell);
             GameManager.Instance.AddMoney(_itemToSell.PurchasePrice());

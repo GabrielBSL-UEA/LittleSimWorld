@@ -1,3 +1,4 @@
+using Audio;
 using Main.Inventory;
 using Scenario;
 using System.Collections.Generic;
@@ -123,6 +124,7 @@ namespace Main.UI
 
             newButton.Button().onClick.AddListener(() =>
             {
+                AudioManager.Instance.PlaySFX("s_ChangeClothes");
                 _inventory.DressClothingPiece(clothing);
                 UpdatePlayerFrame();
             });

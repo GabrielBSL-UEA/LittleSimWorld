@@ -4,6 +4,7 @@ using Enums;
 using TMPro;
 using System;
 using Custom;
+using Audio;
 
 namespace Main.UI
 {
@@ -97,6 +98,8 @@ namespace Main.UI
             for (int i = 0; i < textArray.Length; i++)
             {
                 MessageText.text += textArray[i];
+
+                AudioManager.Instance.PlaySFX("s_MessageChar");
                 yield return new WaitForSeconds(messageFillSpeed);
             }
 
@@ -113,6 +116,11 @@ namespace Main.UI
         public virtual void CloseSpecialPanel()
         {
 
+        }
+
+        public void PlayUIClick()
+        {
+            AudioManager.Instance.PlaySFX("s_UIClick");
         }
 
         public void SceneTransitionAnimation(Action callback)

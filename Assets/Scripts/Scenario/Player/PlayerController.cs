@@ -1,6 +1,7 @@
 using Main;
 using Main.Inventory;
 using UnityEngine;
+using Audio;
 
 namespace Scenario
 {
@@ -35,6 +36,8 @@ namespace Scenario
             _inputActions.Player.Movement.canceled += ctx => ReceiveDirectionalInput(Vector2.zero);
 
             _inputActions.Player.Interaction.performed += _ => ReceiveInteractionInput();
+
+            _inputActions.Player.Quit.performed += _ => ReceiveQuitInput();
 
             //Set the other components
             TryGetComponent(out _playerMovement);
@@ -79,6 +82,11 @@ namespace Scenario
             _playerInteraction.TriggerInteraction();
         }
 
+        private void ReceiveQuitInput()
+        {
+            GameManager.Instance.StartSceneTransition("");
+        }
+
         public void AddItemIntoInventory(Item newItem)
         {
             GameManager.Instance.RegisterNewItemToPlayerInventory(newItem);
@@ -94,6 +102,15 @@ namespace Scenario
         public Rigidbody2D Rigidbody2D()
         {
             return _rigidbody2D;
+        }
+
+
+        //--------------------
+        // AnimationCalls
+        //--------------------
+        public void PlayFootSound()
+        {
+            AudioManager.Instance.PlaySFX("s_PlayerFoot");
         }
     }
 }

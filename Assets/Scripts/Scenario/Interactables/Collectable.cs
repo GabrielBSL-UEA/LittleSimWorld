@@ -1,6 +1,8 @@
 ﻿using Main;
 using Main.Inventory;
 using UnityEngine;
+using Audio;
+using System.Collections;
 
 namespace Scenario
 {
@@ -10,6 +12,10 @@ namespace Scenario
         //Item to hold
         [SerializeField] private Item itemToCollect;
 
+        [Header("Light")]
+        [SerializeField] private Transform lightTransform;
+        [SerializeField] private float fullRotationTime;
+
         //To avoid double interaction
         private bool _collected;
 
@@ -18,6 +24,16 @@ namespace Scenario
             base.Awake();
 
             UpdateCollectableSprite();
+            StartCoroutine(RotateLight());
+        }
+
+        private IEnumerator RotateLight()
+        {
+            while (true)
+            {
+                lightTransform.eulerAngles += new Vector3(0, 0, 360) * (Time.deltaTime / fullRotationTime);
+                yield return null;
+            }
         }
 
         //Update the object sprite and the outline object with the holded item
@@ -48,6 +64,8 @@ namespace Scenario
             _collected = true;
 
             GameManager.Instance.RegisterNewItemToPlayerInventory(itemToCollect);
+            AudioManager.Instance.PlaySFX("s_GetItem");
+            StopAllCoroutines();
 
             if (destroyAfter)
             {

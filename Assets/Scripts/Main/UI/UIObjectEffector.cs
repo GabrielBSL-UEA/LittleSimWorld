@@ -1,3 +1,4 @@
+using Audio;
 using Custom;
 using System;
 using UnityEngine;
@@ -46,6 +47,7 @@ namespace Main.UI
                 .setEase(activationEase);
 
             SetBackground(_initialBackgroundAlpha, activationTime);
+            AudioManager.Instance.PlaySFX("s_Panel");
         }
 
         //Deactivate the panel and sends a callback
@@ -58,6 +60,7 @@ namespace Main.UI
             _deactivating = true;
 
             SetBackground(0, deactivationTime);
+            AudioManager.Instance.PlaySFX("s_Panel");
 
             transform.LeanScale(Vector2.zero, deactivationTime).
                 setEase(deactivationEase)
