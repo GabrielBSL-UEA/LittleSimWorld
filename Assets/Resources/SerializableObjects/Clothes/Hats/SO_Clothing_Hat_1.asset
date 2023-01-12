@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e4da3e0805d1be429a6967f240483bb, type: 3}
+  m_Name: SO_Clothing_Hat_1
+  m_EditorClassIdentifier: 
+  itemName: Bonnet
+  canStack: 0
+  purchasePrice: 10
+  salePrice: 0
+  itemSprite: {fileID: 1161257762, guid: 8ff49875a75884a4e8b121979782902b, type: 3}
+  clothingAnimatorController: {fileID: 9100000, guid: 1a6b28faddda4ae43945eb4a6fc920a9, type: 2}

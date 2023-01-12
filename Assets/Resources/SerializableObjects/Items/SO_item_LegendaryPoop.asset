@@ -9,8 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a039400f6409bdf438093996ea74792e, type: 3}
-  m_Name: Outfit_4
+  m_Script: {fileID: 11500000, guid: 3d9f5634082bf194099c9b6ef8238906, type: 3}
+  m_Name: SO_item_LegendaryPoop
   m_EditorClassIdentifier: 
-  itemSprite: {fileID: 1193819632, guid: 45bf2319f1acbe04fa0890751623dc13, type: 3}
-  clothingAnimatorController: {fileID: 9100000, guid: cece29fe288f4234cb75090b6cf7097b, type: 2}
+  itemName: Legendary Poop
+  canStack: 1
+  purchasePrice: 200
+  salePrice: 100
+  itemSprite: {fileID: 800051068, guid: f074abbcef3a1cb40b9c70bf6d01d98a, type: 3}

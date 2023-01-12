@@ -99,6 +99,12 @@ namespace Main.UI
             return _gameInterface.ShowMessageOnScreen(message, character, mood, newEvent);
         }
 
+        //Opens the special panel that, depending on the scene, can be anything
+        public void OpenInterfaceSpecialPanel()
+        {
+            _gameInterface.OpenSpecialPanel();
+        }
+
         //Function called in the scene beginning
         public void SetUp()
         {

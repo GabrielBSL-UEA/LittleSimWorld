@@ -124,7 +124,7 @@ TextureImporter:
         width: 96
         height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 3, y: 5, z: 3, w: 5}
       outline: []
       physicsShape: []
@@ -145,7 +145,7 @@ TextureImporter:
         width: 96
         height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 3, y: 3, z: 3, w: 3}
       outline: []
       physicsShape: []
@@ -153,6 +153,48 @@ TextureImporter:
       bones: []
       spriteID: 2c74c64dabcf68341b26aaa8bcab8cc7
       internalID: -582254506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_UI_1_0
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 32
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 4, y: 10, z: 4, w: 4}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1c051b60ce92c64bb30b50d49a4026f
+      internalID: 752059785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_UI_1_1
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 2, y: 2, z: 2, w: 2}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84c636c61a934c847b234f295d201d7a
+      internalID: -808147569
       vertices: []
       indices: 
       edges: []
@@ -170,6 +212,8 @@ TextureImporter:
     nameFileIdTable:
       gui_flat_1: -582254506
       gui_flat_0: 433067902
+      spritesheet_UI_1_0: 752059785
+      spritesheet_UI_1_1: -808147569
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

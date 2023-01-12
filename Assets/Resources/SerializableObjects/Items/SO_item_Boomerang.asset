@@ -9,8 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cc0bc65df0b3664492f940aafc28233, type: 3}
-  m_Name: Hair_2
+  m_Script: {fileID: 11500000, guid: 3d9f5634082bf194099c9b6ef8238906, type: 3}
+  m_Name: SO_item_Boomerang
   m_EditorClassIdentifier: 
-  itemSprite: {fileID: -107011981, guid: 2fef6a0e9816b1946a6a0a905fcb714d, type: 3}
-  clothingAnimatorController: {fileID: 9100000, guid: a827560ae8869d747b325a57503e30ae, type: 2}
+  itemName: Boomerang
+  canStack: 1
+  purchasePrice: 20
+  salePrice: 10
+  itemSprite: {fileID: 444565486, guid: f074abbcef3a1cb40b9c70bf6d01d98a, type: 3}

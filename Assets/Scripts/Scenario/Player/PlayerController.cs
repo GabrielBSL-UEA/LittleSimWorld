@@ -1,3 +1,5 @@
+using Main;
+using Main.Inventory;
 using UnityEngine;
 
 namespace Scenario
@@ -41,6 +43,7 @@ namespace Scenario
 
             _playerMovement.Controller = this;
             _playerAnimation.Controller = this;
+            _playerInteraction.Controller = this;
 
             TryGetComponent(out _rigidbody2D);
         }
@@ -70,10 +73,15 @@ namespace Scenario
         {
             _playerMovement.TranslateMovementInputs(direction);
         }
-
+        //Receive interaction input and pass the information to the required components
         private void ReceiveInteractionInput()
         {
             _playerInteraction.TriggerInteraction();
+        }
+
+        public void AddItemIntoInventory(Item newItem)
+        {
+            GameManager.Instance.RegisterNewItemToPlayerInventory(newItem);
         }
 
         //--------------------

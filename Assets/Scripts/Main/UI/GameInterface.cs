@@ -63,6 +63,7 @@ namespace Main.UI
             }
 
             MessageBox.Deactivate(_currentEvent);
+            _currentEvent = null;
         }
 
         //IEnumerator that animates the message box
@@ -93,6 +94,17 @@ namespace Main.UI
 
             InMessageAnimation = false;
             _textCoroutine = null;
+        }
+
+        //Functions for the special panel of the inherit classes
+        public virtual void OpenSpecialPanel()
+        {
+
+        }
+
+        public virtual void CloseSpecialPanel()
+        {
+
         }
     }
 }

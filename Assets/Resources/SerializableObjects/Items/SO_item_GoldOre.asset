@@ -9,8 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cc0bc65df0b3664492f940aafc28233, type: 3}
-  m_Name: Hair_1
+  m_Script: {fileID: 11500000, guid: 3d9f5634082bf194099c9b6ef8238906, type: 3}
+  m_Name: SO_item_GoldOre
   m_EditorClassIdentifier: 
-  itemSprite: {fileID: 252395467, guid: d39bfcfe6e73e6148944ef6d900649f8, type: 3}
-  clothingAnimatorController: {fileID: 9100000, guid: f07d653e2e0a54b4b86d1e391a40b837, type: 2}
+  itemName: Gold Ore
+  canStack: 1
+  purchasePrice: 60
+  salePrice: 30
+  itemSprite: {fileID: -617890319, guid: f074abbcef3a1cb40b9c70bf6d01d98a, type: 3}

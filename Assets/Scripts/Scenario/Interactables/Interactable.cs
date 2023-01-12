@@ -11,12 +11,12 @@ namespace Scenario
     public class Interactable : MonoBehaviour
     {
         //Outline sprite renderers
-        [SerializeField] private SpriteRenderer[] outlines;
+        [SerializeField] protected SpriteRenderer[] outlines;
 
         private Animator _animator;
         private bool _selected;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             //Security meajure in case outline doesn't have elements
             if (outlines.Length == 0)
@@ -70,7 +70,7 @@ namespace Scenario
         }
 
         //Interaction function, to be define by it's inherit classes
-        public virtual void Interact()
+        public virtual void Interact(PlayerInteraction interactor)
         {
 
         }
