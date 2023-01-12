@@ -149,11 +149,19 @@ namespace Main
         //----------------------
         private void OnEnable()
         {
+            if (Instance != this)
+            {
+                return;
+            }
             SceneManager.sceneLoaded += OnSceneLoad;
         }
 
         private void OnDisable()
         {
+            if (Instance != this)
+            {
+                return;
+            }
             SceneManager.sceneLoaded += OnSceneLoad;
         }
 
