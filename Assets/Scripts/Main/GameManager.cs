@@ -19,7 +19,7 @@ namespace Main
         public static GameManager Instance;
 
         //Inportant classes
-        [SerializeField] private UIManager uIManager;
+        private UIManager _uIManager;
         private InventoryManager _inventoryManager;
         private PlayerController _player;
 
@@ -40,6 +40,7 @@ namespace Main
             DontDestroyOnLoad(gameObject);
 
             _inventoryManager = transform.GetComponentInChildren<InventoryManager>();
+            _uIManager = transform.GetComponentInChildren<UIManager>();
 
             _sceneMusic["scene_Archipelago"] = "m_Exterior";
             _sceneMusic["scene_House"] = "m_House";
@@ -50,7 +51,7 @@ namespace Main
         public void StartConversation(MessageSegment conversation)
         {
             _player.DeactivateInputs();
-            uIManager.LoadMessageSegment(conversation);
+            _uIManager.LoadMessageSegment(conversation);
         }
 
         //Activate or deactivate the player inputs
@@ -58,12 +59,12 @@ namespace Main
         {
             if (value)
             {
-                uIManager.DeactivateInputs();
+                _uIManager.DeactivateInputs();
                 _player.ActivateInputs();
                 return;
             }
 
-            uIManager.ActivateInputs();
+            _uIManager.ActivateInputs();
             _player.DeactivateInputs();
         }
 
@@ -98,7 +99,7 @@ namespace Main
         //Open the current special panel
         public void OpenSpecialPanel()
         {
-            uIManager.OpenInterfaceSpecialPanel();
+            _uIManager.OpenInterfaceSpecialPanel();
         }
 
         public void StartSceneTransition(string sceneName, int entranceIndex = 0)
@@ -107,7 +108,7 @@ namespace Main
             _entranceBuffer = entranceIndex;
 
             AudioManager.Instance.FadeMusic(0, .3f);
-            uIManager.PlaySceneTransitionAnimation(callback: () => 
+            _uIManager.PlaySceneTransitionAnimation(callback: () => 
             {
                 if(sceneName.Length > 0)
                 {
@@ -159,7 +160,7 @@ namespace Main
         //Scene load callback, use to set up important classes in a new scene
         private void OnSceneLoad(Scene scene, LoadSceneMode loadScene)
         {
-            uIManager.SetUp();
+            _uIManager.SetUp();
 
             AudioManager.Instance.PlayMusic(_sceneMusic[scene.name]);
             AudioManager.Instance.FadeMusic(1, .3f);
