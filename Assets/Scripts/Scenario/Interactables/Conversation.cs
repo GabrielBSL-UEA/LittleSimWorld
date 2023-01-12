@@ -14,7 +14,7 @@ namespace Scenario
         [SerializeField] private MessageSegment[] segments;
 
         //Function that selects a random message segment and sends it to the GameManager
-        public override void Interact()
+        public override void Interact(PlayerInteraction interactor)
         {
             if(segments.Length == 0)
             {

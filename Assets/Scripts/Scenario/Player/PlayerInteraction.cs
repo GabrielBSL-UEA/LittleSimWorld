@@ -35,7 +35,10 @@ namespace Scenario
 
             if (newClosestInteractable != currentInteractable)
             {
-                currentInteractable?.SetOutline(false);
+                if (currentInteractable != null)
+                {
+                    currentInteractable.SetOutline(false);
+                }
                 newClosestInteractable?.SetOutline(true);
 
                 currentInteractable = newClosestInteractable;
@@ -68,7 +71,11 @@ namespace Scenario
         //Trigger the interaction of the closest object
         public void TriggerInteraction()
         {
-            currentInteractable?.Interact();
+            if (currentInteractable == null)
+            {
+                return;
+            }
+            currentInteractable?.Interact(this);
         }
     }
 }

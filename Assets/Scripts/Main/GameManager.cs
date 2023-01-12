@@ -1,5 +1,7 @@
+using Main.Inventory;
 using Main.UI;
 using Scenario;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,7 +18,10 @@ namespace Main
 
         //Inportant classes
         private UIManager _uIManager;
+        private InventoryManager _inventoryManager;
         private PlayerController _player;
+
+        private int _money = 100;
 
         private void Awake()
         {
@@ -28,6 +33,9 @@ namespace Main
 
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
+            _inventoryManager = transform.GetComponentInChildren<InventoryManager>();
+            _uIManager = transform.GetComponentInChildren<UIManager>();
         }
 
         //Start the conversation segment
@@ -42,11 +50,63 @@ namespace Main
         {
             if (value)
             {
+                _uIManager.DeactivateInputs();
                 _player.ActivateInputs();
                 return;
             }
 
+            _uIManager.ActivateInputs();
             _player.DeactivateInputs();
+        }
+
+        //Adds a new item to player's inventory
+        public void RegisterNewItemToPlayerInventory(Item itemToAdd)
+        {
+            _inventoryManager.AddItemToPlayerInventory(itemToAdd);
+        }
+        //Removes a new item from the player's inventory
+        public void RemoveItemFromPlayerInventory(Item itemToRemove)
+        {
+            _inventoryManager.RemoveItemFromPlayerInventory(itemToRemove);
+        }
+
+        //Add money
+        public void AddMoney(int value)
+        {
+            _money += value;
+        }
+        //Remove money, returning true if operation was successful
+        public bool RemoveMoney(int value)
+        {
+            if(_money < value)
+            {
+                return false;
+            }
+
+            _money -= value;
+            return true;
+        }
+
+        //Open the current special panel
+        public void OpenSpecialPanel()
+        {
+            _uIManager.OpenInterfaceSpecialPanel();
+        }
+
+        //----------------------
+        // GET FUNCTIONS
+        //----------------------
+        public int CurrentMoney()
+        {
+            return _money;
+        }
+        public List<Clothing> GetAvailableClothes()
+        {
+            return _inventoryManager.GetAvailableClothes();
+        }
+        public List<Item> GetPlayerInventory(bool withSellingPrices)
+        {
+            return _inventoryManager.Inventory(withSellingPrices);
         }
 
         //----------------------
@@ -62,10 +122,9 @@ namespace Main
             SceneManager.sceneLoaded += OnSceneLoad;
         }
 
-        //Scene load callback, use to load the important classes in a new scene
+        //Scene load callback, use to set up important classes in a new scene
         private void OnSceneLoad(Scene scene, LoadSceneMode loadScene)
         {
-            _uIManager = FindObjectOfType<UIManager>();
             _uIManager.SetUp();
 
             _player = FindObjectOfType<PlayerController>();

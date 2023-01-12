@@ -3,6 +3,7 @@ using UnityEngine;
 using Enums;
 using TMPro;
 using System;
+using Custom;
 
 namespace Main.UI
 {
@@ -18,17 +19,23 @@ namespace Main.UI
 
         //Text speed animation
         [Header("Animations")]
-        [SerializeField] private float messageFillSpeed;
+        [SerializeField] private float messageFillSpeed = .075f;
 
         [Header("MessageBox")]
         [SerializeField] private UIObjectEffector MessageBox;
         [SerializeField] private TextMeshProUGUI MessageText;
 
+        [Header("Default")]
+        [SerializeField] private CustomEvent defaultEventAfterConversationEnd;
+
         private Coroutine _textCoroutine;
+        private CustomEvent _currentEvent;
+
         public bool InMessageAnimation { get; private set; }
 
+
         //Run the text animation or imediatly stops in case to be called while the animation is running
-        public bool ShowMessageOnScreen(string message, Characters character, Mood charMood)
+        public bool ShowMessageOnScreen(string message, Characters character, Mood charMood, CustomEvent eventToTrigger)
         {
             if(_textCoroutine != null)
             {
@@ -42,20 +49,30 @@ namespace Main.UI
             }
 
             //Keep track of the coroutine in case to stop it early
-            _textCoroutine = StartCoroutine(TextAnimation(message));
+            _textCoroutine = StartCoroutine(TextAnimation(message, eventToTrigger));
             return true;
         }
 
         //Deactivate the message panel, finishing the conversation. Also sends a callback after the deactivation animation ends
-        public void CloseConversation(Action callback)
+        public void CloseConversation()
         {
-            MessageBox.Deactivate(callback);
+            if(_currentEvent == null)
+            {
+                MessageBox.Deactivate(defaultEventAfterConversationEnd);
+                return;
+            }
+
+            MessageBox.Deactivate(_currentEvent);
+            _currentEvent = null;
         }
 
         //IEnumerator that animates the message box
-        private IEnumerator TextAnimation(string text)
+        private IEnumerator TextAnimation(string text, CustomEvent newEvent)
         {
+            _currentEvent?.TriggerEvent();
+
             InMessageAnimation = true;
+            _currentEvent = newEvent;
 
             MessageText.text = "";
 
@@ -77,6 +94,17 @@ namespace Main.UI
 
             InMessageAnimation = false;
             _textCoroutine = null;
+        }
+
+        //Functions for the special panel of the inherit classes
+        public virtual void OpenSpecialPanel()
+        {
+
+        }
+
+        public virtual void CloseSpecialPanel()
+        {
+
         }
     }
 }

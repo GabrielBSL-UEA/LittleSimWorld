@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Utils;
 using Enums;
+using Main.Inventory;
 
 namespace Scenario
 {
@@ -17,7 +18,17 @@ namespace Scenario
 
         //Reference to the Animator component in the PlayerSprite, child of the main object
         [Header("Main")]
-        [SerializeField] private Animator _playerAnimator;
+        [SerializeField] private Animator playerAnimator;
+
+        [Header("Clothing")]
+        [SerializeField] private Animator hairAnimator;
+        [SerializeField] private Animator hatAnimator;
+        [SerializeField] private Animator outfitAnimator;
+
+        [Header("Default")]
+        [SerializeField] private Outfit defaultOutfit;
+        [SerializeField] private Hair defaultHair;
+        [SerializeField] private Hat defaultHat;
 
         //Enum variables that keeps track of the current state of the character
         private direction _currentDirection = direction.down;
@@ -30,6 +41,24 @@ namespace Scenario
         private void Awake()
         {
             SetUpAnimNamesDictionary();
+        }
+
+        private void Start()
+        {
+            LoadDefaultClothingIntoInventory();
+        }
+
+        //Loads the default clothes on the player inventory
+        private void LoadDefaultClothingIntoInventory()
+        {
+            Controller.AddItemIntoInventory(defaultOutfit);
+            Controller.AddItemIntoInventory(defaultHair);
+            Controller.AddItemIntoInventory(defaultHat);
+        }
+
+        public void LoadClothing(Clothing toDress)
+        {
+            toDress.SetPlayerClothing(this);
         }
 
         //Function that sets up the translator dictionary
@@ -111,7 +140,33 @@ namespace Scenario
             _currentAnimation = newAnimation;
 
             var animationName = Animations.Name(newAnimation);
-            _playerAnimator.Play(animationName);
+            playerAnimator.Play(animationName);
+
+            SetClothingAnimation(animationName);
+        }
+
+        //Play the current animation on the clothes animators
+        private void SetClothingAnimation(string animationName)
+        {
+            hatAnimator.Play(animationName);
+            hairAnimator.Play(animationName);
+            outfitAnimator.Play(animationName);
+        }
+
+        //--------------------
+        // GET FUNCTIONS
+        //--------------------
+        public Animator HairAnimator()
+        {
+            return hairAnimator;
+        }
+        public Animator HatAnimator()
+        {
+            return hairAnimator;
+        }
+        public Animator OutfitAnimator()
+        {
+            return hairAnimator;
         }
     }
 }
