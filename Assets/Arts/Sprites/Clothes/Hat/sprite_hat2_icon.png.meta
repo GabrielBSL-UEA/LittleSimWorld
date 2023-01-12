@@ -116,7 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle_down
+      name: icon_hat2
       rect:
         serializedVersion: 2
         x: 24
@@ -147,7 +147,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      spritesheet_hat2_10: -990615850
+      walk_up_6: -1931387968
       char_a_p1_5hat_pnty_v04_2: -1878188153
       spritesheet_hat2_25: -187174549
       char_a_p1_5hat_pnty_v04_20: -1819550158
@@ -214,6 +214,7 @@ TextureImporter:
       spritesheet_hat2_18: 1650088072
       walk_down_3: 1786675645
       idle_right: -745096022
+      icon_hat2: -206188176
       spritesheet_hat2_24: 1588391951
       char_a_p1_5hat_pnty_v04_17: 1730092816
       char_a_p1_5hat_pnty_v04_23: 2145482427
@@ -233,7 +234,6 @@ TextureImporter:
       spritesheet_hat2_19: -716786378
       spritesheet_hat2_27: -1047367872
       char_a_p1_5hat_pnty_v04_15: 1852058695
-      idle_down: -206188176
       spritesheet_hat2_8: 1408658547
       spritesheet_hat2_7: -1263472964
       walk_left_2: 1973186427
@@ -246,7 +246,7 @@ TextureImporter:
       spritesheet_hat2_28: -496014908
       spritesheet_hat2_2: -1550437285
       walk_left_6: 869002685
-      walk_up_6: -1931387968
+      spritesheet_hat2_10: -990615850
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

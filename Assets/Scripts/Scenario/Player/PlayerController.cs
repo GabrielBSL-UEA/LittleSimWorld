@@ -83,6 +83,10 @@ namespace Scenario
         {
             GameManager.Instance.RegisterNewItemToPlayerInventory(newItem);
         }
+        public void Dress(Clothing toDress)
+        {
+            _playerAnimation.LoadClothing(toDress);
+        }
 
         //--------------------
         // GET FUNCTIONS

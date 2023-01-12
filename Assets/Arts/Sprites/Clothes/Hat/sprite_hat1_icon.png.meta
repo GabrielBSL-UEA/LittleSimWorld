@@ -116,7 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle_down
+      name: icon_hat1
       rect:
         serializedVersion: 2
         x: 25
@@ -147,6 +147,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      icon_hat1: 1161257762
       char_a_p1_5hat_pfht_v04_4: -1031423174
       char_a_p1_5hat_pfht_v04_9: -1767604101
       spritesheet_hat1_14: 548049288
@@ -236,7 +237,6 @@ TextureImporter:
       char_a_p1_5hat_pfht_v04_10: -702537772
       char_a_p1_5hat_pfht_v04_5: 1296543482
       spritesheet_hat1_11: 2507398
-      idle_down: 1161257762
       char_a_p1_5hat_pfht_v04_1: 2675766
       spritesheet_hat1_35: 1430247703
       walk_left_2: -2022145118

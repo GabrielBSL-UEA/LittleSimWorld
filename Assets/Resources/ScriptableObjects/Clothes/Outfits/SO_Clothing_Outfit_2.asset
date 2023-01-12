@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a039400f6409bdf438093996ea74792e, type: 3}
-  m_Name: SO_Clothing_Outfit_3
+  m_Name: SO_Clothing_Outfit_2
   m_EditorClassIdentifier: 
-  itemName: Platinum
+  itemName: Golden
   canStack: 0
-  purchasePrice: 30
+  purchasePrice: 20
   salePrice: 0
-  itemSprite: {fileID: -511036338, guid: 2055ff92dc85f334fb930f26f439026d, type: 3}
-  clothingAnimatorController: {fileID: 9100000, guid: d0d776b0d39340541aaffecdcce8da5f, type: 2}
+  itemSprite: {fileID: -1367141123, guid: 9799e02851719254a8c3c74929b42069, type: 3}
+  idleDownSprite: {fileID: 2022450213, guid: 9455a7e37d5c20d4f80895a5bd05d9aa, type: 3}
+  clothingAnimatorController: {fileID: 9100000, guid: b12f4e28df7820f4c974f872aad26d65, type: 2}

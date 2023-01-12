@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a039400f6409bdf438093996ea74792e, type: 3}
-  m_Name: SO_Clothing_Outfit_4
+  m_Name: SO_Clothing_Outfit_1
   m_EditorClassIdentifier: 
-  itemName: Undies_F
+  itemName: Undies_M
   canStack: 0
-  purchasePrice: 40
+  purchasePrice: 10
   salePrice: 0
-  itemSprite: {fileID: 1193819632, guid: 426b9f5009b172e4bab32baf31cc0213, type: 3}
-  clothingAnimatorController: {fileID: 9100000, guid: cece29fe288f4234cb75090b6cf7097b, type: 2}
+  itemSprite: {fileID: -1177245296, guid: a3067de1873ee8b47aaf0b9033a7cf82, type: 3}
+  idleDownSprite: {fileID: -1177245296, guid: 95478df213a740a439c0529cee7e9f1a, type: 3}
+  clothingAnimatorController: {fileID: 9100000, guid: cc6b9a8a86e3885438df0a709147cd9e, type: 2}

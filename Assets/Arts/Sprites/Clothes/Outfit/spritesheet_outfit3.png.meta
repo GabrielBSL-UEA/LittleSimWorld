@@ -683,7 +683,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_outfit3_27
+      name: walk_down_2
       rect:
         serializedVersion: 2
         x: 64
@@ -747,7 +747,6 @@ TextureImporter:
       char_a_p1_1out_pfpn_v04_23: -488418104
       char_a_p1_1out_pfpn_v04_47: 1584858472
       spritesheet_outfit3_18: -986953379
-      spritesheet_outfit3_27: 1243399431
       spritesheet_outfit3_8: -1459220110
       spritesheet_outfit3_25: 1628007015
       char_a_p1_1out_pfpn_v04_20: 215763733
@@ -760,7 +759,7 @@ TextureImporter:
       char_a_p1_1out_pfpn_v04_12: -2074444842
       walk_right_6: -281237523
       char_a_p1_1out_pfpn_v04_39: -2038926034
-      walk_down_2: 1251143827
+      walk_down_2: 1243399431
       walk_right_1: -346729170
       char_a_p1_1out_pfpn_v04_7: 2060489976
       walk_left_1: -243814446

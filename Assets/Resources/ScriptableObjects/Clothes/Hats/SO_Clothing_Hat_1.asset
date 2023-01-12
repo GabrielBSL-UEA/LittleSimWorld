@@ -17,4 +17,5 @@ MonoBehaviour:
   purchasePrice: 10
   salePrice: 0
   itemSprite: {fileID: 1161257762, guid: 8ff49875a75884a4e8b121979782902b, type: 3}
+  idleDownSprite: {fileID: 1161257762, guid: 7bab8c491502bc44e951413e71de62b9, type: 3}
   clothingAnimatorController: {fileID: 9100000, guid: 1a6b28faddda4ae43945eb4a6fc920a9, type: 2}
