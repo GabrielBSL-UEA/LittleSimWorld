@@ -872,6 +872,7 @@ MonoBehaviour:
   itemToCollect: {fileID: 11400000, guid: fcc2a39778e564240bfeae8f10201678, type: 2}
   lightTransform: {fileID: 2149853387766329530}
   fullRotationTime: 10
+  particleOnCollect: {fileID: 5076521074021319777, guid: b711685900f72d542b6cdbe59761a974, type: 3}
 --- !u!61 &7117537207648683025
 BoxCollider2D:
   m_ObjectHideFlags: 0

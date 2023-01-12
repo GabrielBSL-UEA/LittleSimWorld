@@ -6,6 +6,7 @@ namespace Scenario
 {
     public class PlayerSprite : MonoBehaviour
     {
+        [SerializeField] private ParticleSystem dirtPS;
         private PlayerController Controller;
 
         private void Awake()
@@ -13,9 +14,10 @@ namespace Scenario
             transform.parent.TryGetComponent(out Controller);
         }
 
-        public void PlayFootSound()
+        public void PlayFootEffect()
         {
             Controller.PlayFootSound();
+            dirtPS.Play();
         }
     }
 }
