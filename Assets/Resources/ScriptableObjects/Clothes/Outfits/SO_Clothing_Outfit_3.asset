@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a039400f6409bdf438093996ea74792e, type: 3}
+  m_Name: SO_Clothing_Outfit_3
+  m_EditorClassIdentifier: 
+  itemName: Platinum
+  canStack: 0
+  purchasePrice: 30
+  salePrice: 0
+  itemSprite: {fileID: -511036338, guid: 2055ff92dc85f334fb930f26f439026d, type: 3}
+  idleDownSprite: {fileID: -511036338, guid: be7f0aec31a2aa74c871eb2ea6911acd, type: 3}
+  clothingAnimatorController: {fileID: 9100000, guid: d0d776b0d39340541aaffecdcce8da5f, type: 2}

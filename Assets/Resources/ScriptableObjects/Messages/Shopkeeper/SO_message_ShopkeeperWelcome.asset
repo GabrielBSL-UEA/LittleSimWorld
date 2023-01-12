@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7570f3cd5843c8479adcf701ba9e967, type: 3}
+  m_Name: SO_message_ShopkeeperWelcome
+  m_EditorClassIdentifier: 
+  _messageSequence:
+  - character: 0
+    mood: 0
+    messageText: Hello! You want to buy something?
+    eventToTrigger: {fileID: 11400000, guid: dfec7c3b137838d4387c79fa308c0707, type: 2}
