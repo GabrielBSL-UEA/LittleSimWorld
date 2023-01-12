@@ -16,10 +16,12 @@ namespace Main.UI
     {
         [Header("Canvases")]
         [SerializeField] private Canvas messageCanvas;
+        [SerializeField] private CanvasGroup transitionCanvas;
 
         //Text speed animation
         [Header("Animations")]
         [SerializeField] private float messageFillSpeed = .075f;
+        [SerializeField] private float sceneTransitionDuration = .8f;
 
         [Header("MessageBox")]
         [SerializeField] private UIObjectEffector MessageBox;
@@ -32,6 +34,12 @@ namespace Main.UI
         private CustomEvent _currentEvent;
 
         public bool InMessageAnimation { get; private set; }
+
+        private void Awake()
+        {
+            transitionCanvas.alpha = 1;
+            transitionCanvas.LeanAlpha(0, sceneTransitionDuration);
+        }
 
 
         //Run the text animation or imediatly stops in case to be called while the animation is running
@@ -105,6 +113,17 @@ namespace Main.UI
         public virtual void CloseSpecialPanel()
         {
 
+        }
+
+        public void SceneTransitionAnimation(Action callback)
+        {
+            LeanTween.cancel(gameObject);
+
+            transitionCanvas.LeanAlpha(1, sceneTransitionDuration)
+                .setOnComplete(() =>
+                {
+                    callback?.Invoke();
+                });
         }
     }
 }

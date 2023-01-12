@@ -12,6 +12,7 @@ namespace Scenario
     {
         //Outline sprite renderers
         [SerializeField] protected SpriteRenderer[] outlines;
+        [SerializeField] protected SpriteRenderer mainRenderer;
 
         private Animator _animator;
         private bool _selected;
@@ -32,11 +33,7 @@ namespace Scenario
 
             SetOutline(false);
 
-            TryGetComponent(out _animator);
-            if(_animator != null)
-            {
-                StartCoroutine(OutlineSpriteUpdate());
-            }
+            StartCoroutine(OutlineSpriteUpdate());
         }
 
         //Set the interactable outlines
@@ -53,8 +50,6 @@ namespace Scenario
         //This IEnumerator is called just in case the interactable object has an animator, meaning we have to update the outline sprites
         private IEnumerator OutlineSpriteUpdate()
         {
-            TryGetComponent(out SpriteRenderer mainRenderer);
-
             while (true)
             {
                 if (_selected)

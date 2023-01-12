@@ -93,6 +93,16 @@ namespace Main
             _uIManager.OpenInterfaceSpecialPanel();
         }
 
+        public void StartSceneTransition(string sceneName)
+        {
+            _player.DeactivateInputs();
+
+            _uIManager.PlaySceneTransitionAnimation(callback: () => 
+            {
+                SceneManager.LoadScene(sceneName);
+            });
+        }
+
         //----------------------
         // GET FUNCTIONS
         //----------------------
