@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4356854772080462149
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4356854772080462151}
+  - component: {fileID: 4356854772080462150}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4356854772080462151
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4356854772080462149}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4356854772080462150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4356854772080462149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9725ce260b6fbe4191c1cd3655c12d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audios:
+  - source: {fileID: 0}
+    name: m_Exterior
+    clip: {fileID: 8300000, guid: 7bfbb5f514fc403418bcc6c931c1ac72, type: 3}
+    volume: 0.3
+    isMusic: 1
+  - source: {fileID: 0}
+    name: m_House
+    clip: {fileID: 8300000, guid: d1c87f15cecb03c43b7d66eeba2c70ed, type: 3}
+    volume: 0.3
+    isMusic: 1
+  - source: {fileID: 0}
+    name: m_Shop
+    clip: {fileID: 8300000, guid: e0042aeb89a628345b0f0ebabb4db95f, type: 3}
+    volume: 0.3
+    isMusic: 1
+  - source: {fileID: 0}
+    name: s_ChangeClothes
+    clip: {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
+    volume: 0.3
+    isMusic: 0
+  - source: {fileID: 0}
+    name: s_GetItem
+    clip: {fileID: 8300000, guid: 81652031b64c342cc8dbc59c138d77c5, type: 3}
+    volume: 0.3
+    isMusic: 0
+  - source: {fileID: 0}
+    name: s_MessageChar
+    clip: {fileID: 8300000, guid: 0994c12e202f342459a4212e7287f7e8, type: 3}
+    volume: 0.2
+    isMusic: 0
+  - source: {fileID: 0}
+    name: s_OperationFailed
+    clip: {fileID: 8300000, guid: 130a177e727814a2ea78a886ab72213d, type: 3}
+    volume: 0.3
+    isMusic: 0
+  - source: {fileID: 0}
+    name: s_OperationSuccessful
+    clip: {fileID: 8300000, guid: 79180f511d89441b9aa23ccae1992fe0, type: 3}
+    volume: 0.3
+    isMusic: 0
+  - source: {fileID: 0}
+    name: s_Panel
+    clip: {fileID: 8300000, guid: cf6c0e7fbef9449c98a0cdb5ea0c4d9f, type: 3}
+    volume: 0.1
+    isMusic: 0
+  - source: {fileID: 0}
+    name: s_PlayerFoot
+    clip: {fileID: 8300000, guid: 6e8772b49f34d402a90016ed445d8a2f, type: 3}
+    volume: 0.05
+    isMusic: 0
+  - source: {fileID: 0}
+    name: s_UIClick
+    clip: {fileID: 8300000, guid: 32d4b1811dda14a6cb9e059ee8ad17d2, type: 3}
+    volume: 0.1
+    isMusic: 0

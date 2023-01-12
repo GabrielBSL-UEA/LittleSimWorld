@@ -1,5 +1,4 @@
 using Scenario;
-using UnityEditor.Animations;
 using UnityEngine;
 
 namespace Main.Inventory
@@ -7,14 +6,14 @@ namespace Main.Inventory
     public class Clothing : Item
     {
         [SerializeField] private Sprite idleDownSprite;
-        [SerializeField] private AnimatorController clothingAnimatorController;
+        [SerializeField] private RuntimeAnimatorController clothingAnimatorController;
 
         public virtual void SetPlayerClothing(PlayerAnimation playerAnimation)
         {
 
         }
 
-        public AnimatorController AnimController()
+        public RuntimeAnimatorController AnimController()
         {
             return clothingAnimatorController;
         }

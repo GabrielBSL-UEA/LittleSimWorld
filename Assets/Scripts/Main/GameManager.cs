@@ -1,6 +1,8 @@
 using Main.Inventory;
+using Enums;
 using Main.UI;
 using Scenario;
+using Audio;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -22,6 +24,9 @@ namespace Main
         private PlayerController _player;
 
         private int _money = 0;
+        private int _entranceBuffer = 0;
+
+        private Dictionary<string, string> _sceneMusic = new Dictionary<string, string>();
 
         private void Awake()
         {
@@ -36,6 +41,10 @@ namespace Main
 
             _inventoryManager = transform.GetComponentInChildren<InventoryManager>();
             _uIManager = transform.GetComponentInChildren<UIManager>();
+
+            _sceneMusic["scene_Archipelago"] = "m_Exterior";
+            _sceneMusic["scene_House"] = "m_House";
+            _sceneMusic["scene_Shop"] = "m_Shop";
         }
 
         //Start the conversation segment
@@ -93,13 +102,21 @@ namespace Main
             _uIManager.OpenInterfaceSpecialPanel();
         }
 
-        public void StartSceneTransition(string sceneName)
+        public void StartSceneTransition(string sceneName, int entranceIndex = 0)
         {
             _player.DeactivateInputs();
+            _entranceBuffer = entranceIndex;
 
+            AudioManager.Instance.FadeMusic(0, .3f);
             _uIManager.PlaySceneTransitionAnimation(callback: () => 
             {
-                SceneManager.LoadScene(sceneName);
+                if(sceneName.Length > 0)
+                {
+                    SceneManager.LoadScene(sceneName);
+                    return;
+                }
+
+                Application.Quit();
             });
         }
 
@@ -145,7 +162,12 @@ namespace Main
         {
             _uIManager.SetUp();
 
+            AudioManager.Instance.PlayMusic(_sceneMusic[scene.name]);
+            AudioManager.Instance.FadeMusic(1, .3f);
+
             _player = FindObjectOfType<PlayerController>();
+            FindObjectOfType<PlayerEntrance>().TransportPlayer(_entranceBuffer);
+
             _inventoryManager.DressPlayer();
         }
     }
