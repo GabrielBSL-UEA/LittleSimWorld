@@ -12,6 +12,7 @@ namespace Main.Inventory
             base.SetPlayerClothing(playerAnimation);
 
             playerAnimation.HatAnimator().runtimeAnimatorController = AnimController();
+            GameManager.Instance.Inventory().CurrentHat = this;
         }
     }
 }

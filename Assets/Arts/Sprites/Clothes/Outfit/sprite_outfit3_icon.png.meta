@@ -116,7 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle_down
+      name: icon_outfit3
       rect:
         serializedVersion: 2
         x: 25
@@ -231,8 +231,8 @@ TextureImporter:
       walk_up_2: -968059953
       walk_down_1: -58851783
       spritesheet_outfit3_32: -1737643768
+      icon_outfit3: -511036338
       spritesheet_outfit3_35: -538507575
-      idle_down: -511036338
       char_a_p1_1out_pfpn_v04_54: -245497153
       char_a_p1_1out_pfpn_v04_6: 336227519
       char_a_p1_1out_pfpn_v04_1: 1427292326

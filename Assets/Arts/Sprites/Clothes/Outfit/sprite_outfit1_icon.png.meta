@@ -116,7 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle_down
+      name: icon_outfit1
       rect:
         serializedVersion: 2
         x: 29
@@ -168,6 +168,7 @@ TextureImporter:
       walk_down_4: 2099120715
       walk_right_5: -1476914254
       char_a_p1_1out_boxr_v01_23: -2077431309
+      icon_outfit1: -1177245296
       spritesheet_outfit1_1: 1491462967
       char_a_p1_1out_boxr_v01_11: 1637204384
       spritesheet_outfit1_9: 1531506984
@@ -225,7 +226,6 @@ TextureImporter:
       char_a_p1_1out_boxr_v01_19: -1198111483
       char_a_p1_1out_boxr_v01_42: -765286772
       spritesheet_outfit1_8: -1979443212
-      idle_down: 878026717
       spritesheet_outfit1_6: -1004063399
       char_a_p1_1out_boxr_v01_6: -1761975591
       spritesheet_outfit1_15: 312502864

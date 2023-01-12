@@ -116,7 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle_down
+      name: icon_hair1
       rect:
         serializedVersion: 2
         x: 25
@@ -228,16 +228,16 @@ TextureImporter:
       spritesheet_hair1_32: -1750952773
       char_a_p1_4har_bob1_v01_11: -1594588349
       spritesheet_hair1_35: -2119993838
-      idle_down: 252395467
       char_a_p1_4har_bob1_v01_6: 1479797404
       char_a_p1_4har_bob1_v01_31: 652099271
-      spritesheet_hair1_17: 1702423220
       spritesheet_hair1_30: -2105115123
+      spritesheet_hair1_17: 1702423220
       spritesheet_hair1_29: -643892696
       walk_left_2: 980561193
       spritesheet_hair1_12: -1046190790
       char_a_p1_4har_bob1_v01_19: 1214016820
       char_a_p1_4har_bob1_v01_14: -786524184
+      icon_hair1: 252395467
       char_a_p1_4har_bob1_v01_2: -968960869
       walk_up_4: 1768798809
       spritesheet_hair1_23: -1039867065

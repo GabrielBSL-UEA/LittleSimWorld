@@ -12,6 +12,7 @@ namespace Main.Inventory
             base.SetPlayerClothing(playerAnimation);
 
             playerAnimation.OutfitAnimator().runtimeAnimatorController = AnimController();
+            GameManager.Instance.Inventory().CurrentOutfit = this;
         }
     }
 }

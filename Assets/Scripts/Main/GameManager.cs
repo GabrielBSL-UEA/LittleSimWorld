@@ -21,7 +21,7 @@ namespace Main
         private InventoryManager _inventoryManager;
         private PlayerController _player;
 
-        private int _money = 100;
+        private int _money = 0;
 
         private void Awake()
         {
@@ -100,13 +100,21 @@ namespace Main
         {
             return _money;
         }
-        public List<Clothing> GetAvailableClothes()
+        public List<Clothing> GetAvailableClothes(bool toBuy = true)
         {
-            return _inventoryManager.GetAvailableClothes();
+            return _inventoryManager.GetAvailableClothes(toBuy);
         }
         public List<Item> GetPlayerInventory(bool withSellingPrices)
         {
             return _inventoryManager.Inventory(withSellingPrices);
+        }
+        public PlayerController Player()
+        {
+            return _player;
+        }
+        public InventoryManager Inventory()
+        {
+            return _inventoryManager;
         }
 
         //----------------------
@@ -128,6 +136,7 @@ namespace Main
             _uIManager.SetUp();
 
             _player = FindObjectOfType<PlayerController>();
+            _inventoryManager.DressPlayer();
         }
     }
 }

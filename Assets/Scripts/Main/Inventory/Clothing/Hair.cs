@@ -12,6 +12,7 @@ namespace Main.Inventory
             base.SetPlayerClothing(playerAnimation);
 
             playerAnimation.HairAnimator().runtimeAnimatorController = AnimController();
+            GameManager.Instance.Inventory().CurrentHair = this;
         }
     }
 }

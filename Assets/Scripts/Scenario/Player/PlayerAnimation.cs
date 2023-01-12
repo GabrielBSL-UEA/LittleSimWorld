@@ -25,11 +25,6 @@ namespace Scenario
         [SerializeField] private Animator hatAnimator;
         [SerializeField] private Animator outfitAnimator;
 
-        [Header("Default")]
-        [SerializeField] private Outfit defaultOutfit;
-        [SerializeField] private Hair defaultHair;
-        [SerializeField] private Hat defaultHat;
-
         //Enum variables that keeps track of the current state of the character
         private direction _currentDirection = direction.down;
         private AnimationNames _currentAnimation = AnimationNames.idle_down;
@@ -41,19 +36,6 @@ namespace Scenario
         private void Awake()
         {
             SetUpAnimNamesDictionary();
-        }
-
-        private void Start()
-        {
-            LoadDefaultClothingIntoInventory();
-        }
-
-        //Loads the default clothes on the player inventory
-        private void LoadDefaultClothingIntoInventory()
-        {
-            Controller.AddItemIntoInventory(defaultOutfit);
-            Controller.AddItemIntoInventory(defaultHair);
-            Controller.AddItemIntoInventory(defaultHat);
         }
 
         public void LoadClothing(Clothing toDress)
@@ -162,11 +144,11 @@ namespace Scenario
         }
         public Animator HatAnimator()
         {
-            return hairAnimator;
+            return hatAnimator;
         }
         public Animator OutfitAnimator()
         {
-            return hairAnimator;
+            return outfitAnimator;
         }
     }
 }
